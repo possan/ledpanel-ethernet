@@ -1,4 +1,7 @@
-all: test1
+all: plasma
 
-test1: test1.cpp
-	gcc -o test1 test1.cpp
+ledpanel.o: ledpanel.cpp ledpanel.h
+	g++ -c -o ledpanel.o ledpanel.cpp
+
+plasma: ledpanel.o plasma.cpp
+	g++ -o plasma plasma.cpp ledpanel.o
